@@ -1,0 +1,71 @@
+﻿<Window x:Class="CLassworkAdoNet1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CLassworkAdoNet1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Canvas Grid.Row="0" x:Name="CanvasRowName">
+            <TextBlock Width="50" TextAlignment="Center" HorizontalAlignment="Left" Margin="70 20 10 10" Text="{Binding booksRowName.Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="15"/>
+            <TextBlock Canvas.Left="200" Width="100" TextAlignment="Center" HorizontalAlignment="Left" Margin="70 20 10 10" Text="{Binding booksRowName.Firstname,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="15"/>
+            <TextBlock Canvas.Left="440" Width="100" TextAlignment="Center" HorizontalAlignment="Left" Margin="90 20 10 10" Text="{Binding booksRowName.Lastname,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="15"/>
+        </Canvas>
+
+        <StackPanel Grid.Row="1" Width="80" HorizontalAlignment="Left" Margin="80 0 0 0" Background="Bisque">
+            <ListView Height="330" Background="Transparent" x:Name="idListView" ItemsSource="{Binding authors}">
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="Id" Width="70" DisplayMemberBinding="{Binding Id}" ></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Width="160" HorizontalAlignment="Left" Margin="240 0 0 0" Background="Bisque">
+            <ListView Height="330" Background="Transparent" ItemsSource="{Binding authors}">
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="Firstname" Width="140" DisplayMemberBinding="{Binding Firstname}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Width="160" HorizontalAlignment="Left" Margin="500 0 0 0" Background="Bisque">
+            <ListView Height="330" Background="Transparent" ItemsSource="{Binding authors}">
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="Lastname" Width="154" DisplayMemberBinding="{Binding Lastname}" ></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <Canvas Grid.Row="2">
+            <TextBlock Canvas.Left="50" Canvas.Top="30" Text="Id" FontSize="15"/>
+            <TextBox Width="200" Canvas.Left="150" Canvas.Top="30" x:Name="idTb"/>
+            <TextBlock Canvas.Left="50" Canvas.Top="60" Text="Firstname" FontSize="15"/>
+            <TextBox Width="200" Canvas.Left="150" Canvas.Top="60" x:Name="firstnameTb"/>
+            <TextBlock Canvas.Left="50" Canvas.Top="90" Text="Id" FontSize="15"/>
+            <TextBox Width="200" Canvas.Left="150" Canvas.Top="90" x:Name="lastnameTb"/>
+            <Border Margin="10,0" Background="Transparent" BorderBrush="MidnightBlue" BorderThickness="1" CornerRadius="10"
+                    Width="55" Height="25" Canvas.Left="140" Canvas.Bottom="10">
+                <Button Style="{StaticResource myButton}" Content="Insert" Command="{Binding InsertCommand}"/>
+            </Border>
+            <Border Margin="10,0" Background="Transparent" BorderBrush="MidnightBlue" BorderThickness="1" CornerRadius="10"
+                    Width="55" Height="25" Canvas.Left="220" Canvas.Bottom="10">
+                <Button Style="{StaticResource myButton}" Content="Update" Command="{Binding UpdateCommnad}"/>
+            </Border>
+            <Border Margin="10,0" Background="Transparent" BorderBrush="MidnightBlue" BorderThickness="1" CornerRadius="10"
+                    Width="55" Height="25" Canvas.Left="300" Canvas.Bottom="10">
+                <Button Style="{StaticResource myButton}" Content="Delete" Command="{Binding DeleteCommand}"/>
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>
