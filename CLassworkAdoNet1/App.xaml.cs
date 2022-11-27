@@ -17,6 +17,7 @@ namespace CLassworkAdoNet1
         public static TextBox IdTexBox;
         public static TextBox FirstnameTextBox;
         public static TextBox LastnameTextBox;
+        public static DataGrid MyDataGrid;
         public App()
         {
 

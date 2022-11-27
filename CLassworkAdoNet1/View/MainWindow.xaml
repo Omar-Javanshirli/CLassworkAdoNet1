@@ -27,7 +27,7 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        </StackPanel>
+        </StackPanel>   
         <StackPanel Grid.Row="1" Width="160" HorizontalAlignment="Left" Margin="240 0 0 0" Background="Bisque">
             <ListView Height="330" Background="Transparent" ItemsSource="{Binding authors}">
                 <ListView.View >
@@ -52,7 +52,7 @@
             <TextBox Width="200" Canvas.Left="150" Canvas.Top="30" x:Name="idTb"/>
             <TextBlock Canvas.Left="50" Canvas.Top="60" Text="Firstname" FontSize="15"/>
             <TextBox Width="200" Canvas.Left="150" Canvas.Top="60" x:Name="firstnameTb"/>
-            <TextBlock Canvas.Left="50" Canvas.Top="90" Text="Id" FontSize="15"/>
+            <TextBlock Canvas.Left="50" Canvas.Top="90" Text="Lastname" FontSize="15"/>
             <TextBox Width="200" Canvas.Left="150" Canvas.Top="90" x:Name="lastnameTb"/>
             <Border Margin="10,0" Background="Transparent" BorderBrush="MidnightBlue" BorderThickness="1" CornerRadius="10"
                     Width="55" Height="25" Canvas.Left="140" Canvas.Bottom="10">
@@ -66,6 +66,10 @@
                     Width="55" Height="25" Canvas.Left="300" Canvas.Bottom="10">
                 <Button Style="{StaticResource myButton}" Content="Delete" Command="{Binding DeleteCommand}"/>
             </Border>
+
+            <DataGrid x:Name="myDataGrid" Canvas.Right="1" Width="300" Canvas.Top="10" Height="149">
+                
+            </DataGrid>
         </Canvas>
     </Grid>
 </Window>

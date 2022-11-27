@@ -27,6 +27,7 @@ namespace CLassworkAdoNet1
             App.IdTexBox = idTb;
             App.FirstnameTextBox = firstnameTb;
             App.LastnameTextBox= lastnameTb;
+            App.MyDataGrid = myDataGrid;
             var vm = new AppViewModel();
             this.DataContext = vm;
         }
